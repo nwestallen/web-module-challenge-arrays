@@ -204,11 +204,11 @@ Use the getAverageWordLength function below to do the following:
 */
 
 function getAverageWordLength(myArray){
-    let wordCount = 0;
+    let characterCount = 0;
     for (let i =0; i < myArray.length; i ++) {
-        wordCount += myArray[i].length;
+        characterCount += myArray[i].length;
     }
-    return wordCount / myArray.length;
+    return characterCount / myArray.length;
 }
 
 
