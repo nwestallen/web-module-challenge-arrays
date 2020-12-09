@@ -141,8 +141,21 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(myArray,flavor){
+    let flavorIndex = '';
+    for (let i = 0; i < myArray.length; i ++) {
+        if (myArray[i] === flavor) {
+            flavorIndex = i;
+        }
+    }
+    if (flavorIndex === 0) {
+        myArray.shift();
+    } else if (flavorIndex === myArray.length - 1) {
+        myArray.pop();
+    } else {
+    myArray = [].concat(myArray.slice(0,flavorIndex),myArray.slice(flavorIndex + 1, myArray.length));
+    }
+    return myArray;
 }
 
 
