@@ -47,11 +47,7 @@ Use the copy function below to do the following:
 */
 
 function copy(myArray){
-    let copyArray = [];
-    for (let i = 0; i < myArray.length; i ++) {
-        copyArray[i] = myArray[i];
-    }
-    return copyArray;
+    return [...myArray];
 }    
 
 
@@ -142,19 +138,8 @@ Use the removeFlavorByName function below to do the following:
 */
 
 function removeFlavorByName(myArray,flavor){
-    let flavorIndex = '';
-    for (let i = 0; i < myArray.length; i ++) {
-        if (myArray[i] === flavor) {
-            flavorIndex = i;
-        }
-    }
-    if (flavorIndex === 0) {
-        myArray.shift();
-    } else if (flavorIndex === myArray.length - 1) {
-        myArray.pop();
-    } else {
-    myArray.splice(flavorIndex,1);
-    }
+
+    myArray.splice(myArray.indexOf(flavor),1);
     return myArray;
 }
 
