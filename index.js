@@ -153,7 +153,7 @@ function removeFlavorByName(myArray,flavor){
     } else if (flavorIndex === myArray.length - 1) {
         myArray.pop();
     } else {
-    myArray = [].concat(myArray.slice(0,flavorIndex),myArray.slice(flavorIndex + 1, myArray.length));
+    myArray.splice(flavorIndex,1);
     }
     return myArray;
 }
@@ -234,9 +234,9 @@ function getRandomFlavors(array1,array2,array3,array4){
         listChoice = Math.floor(Math.random()*flavorPool.length);
         itemChoice = Math.floor(Math.random() * flavorPool[listChoice].length);
         randomFlavors.push(flavorPool[listChoice][itemChoice]);
-        flavorPool[listChoice] = [].concat(flavorPool[listChoice].slice(0,itemChoice),flavorPool[listChoice].slice(itemChoice + 1, flavorPool[listChoice].length));
+        flavorPool[listChoice].splice(itemChoice,1);
         if (flavorPool[listChoice].length < 1) {
-          flavorPool = [].concat(flavorPool.slice(0,listChoice),flavorPool.slice(listChoice+1,flavorPool.length));
+          flavorPool.splice(listChoice,1);
         }
     }
     return randomFlavors;
