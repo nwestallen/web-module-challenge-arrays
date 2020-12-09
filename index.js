@@ -225,8 +225,21 @@ Use the getRandomFlavors function and new arrays below to do the following:
 */
 
 
-function getRandomFlavors(/*code here*/){
-    /*code here*/
+function getRandomFlavors(array1,array2,array3,array4){
+    let flavorPool = [array1,array2,array3,array4];
+    let randomFlavors = [];
+    let listChoice = 0;
+    let itemChoice = 0;
+    for (let i = 0; i < 31; i ++) {
+        listChoice = Math.floor(Math.random()*flavorPool.length);
+        itemChoice = Math.floor(Math.random() * flavorPool[listChoice].length);
+        randomFlavors.push(flavorPool[listChoice][itemChoice]);
+        flavorPool[listChoice] = [].concat(flavorPool[listChoice].slice(0,itemChoice),flavorPool[listChoice].slice(itemChoice + 1, flavorPool[listChoice].length));
+        if (flavorPool[listChoice].length < 1) {
+          flavorPool = [].concat(flavorPool.slice(0,listChoice),flavorPool.slice(listChoice+1,flavorPool.length));
+        }
+    }
+    return randomFlavors;
 }
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
