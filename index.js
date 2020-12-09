@@ -181,7 +181,7 @@ Use the filterByWord function below to do the following:
 */
 
 function filterByWord(myArray,filterValue){
-    let newArray = []
+    let newArray = [];
     for (let i = 0; i < myArray.length; i ++) {
         if (myArray[i].includes(filterValue)) {
             newArray.push(myArray[i]);
@@ -203,8 +203,12 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-    /*code here*/
+function getAverageWordLength(myArray){
+    let wordCount = 0;
+    for (let i =0; i < myArray.length; i ++) {
+        wordCount += myArray[i].length;
+    }
+    return wordCount / myArray.length;
 }
 
 
